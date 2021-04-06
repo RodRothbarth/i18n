@@ -1,0 +1,25 @@
+<input placeholder="{{'placeholder' | translate}}">
+
+<h1 translate>home.title</h1>
+<h2 translate>home.welcome_text</h2>
+
+
+<!-- <select #langselect (change)="changeLang(langselect.value)">
+        <option value="" translate="optionLang"></option>
+        <option value="en">English</option>
+        <option value="pt-br">Português</option>
+  
+</select> -->
+
+
+<mat-form-field>
+  <mat-label translate>
+    {{'optionLang'}}  
+  </mat-label>
+  <mat-select [(ngModel)]="language" style="background-color: #212529; font-size: 10px;" (selectionChange)="changeLang()">
+      <mat-option *ngFor="let lang of languageList " [value]="lang.value">{{ lang.viewValue }}</mat-option>
+      
+  </mat-select>
+</mat-form-field>
+
+<a routerLink='/settings' translate>settings.title</a>
